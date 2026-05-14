@@ -1,0 +1,4 @@
+# 谛听（DiTing）— Python 依赖
+# 版本固定，确保长期可用
+pyyaml==6.0
+requests==2.31.0

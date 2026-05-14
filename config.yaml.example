@@ -1,0 +1,54 @@
+# 谛听（DiTing）— 配置文件示例
+# 复制此文件为 config.yaml 后编辑
+#
+# 使用方式：
+#   cp config.example.yaml ~/.diting/config.yaml
+#   vim ~/.diting/config.yaml
+#   diting doctor  # 检查配置
+
+wechat:
+  account_dir: auto
+  temp_dir: ~/.diting/tmp
+  output_dir: ~/.diting/outputs
+
+summary:
+  message_limit: 200
+  language: zh-CN
+  output_format: markdown
+
+sessions:
+  groups:
+    - name: 项目对接群
+      enabled: true
+      message_limit: 300
+    - name: 部门群
+      enabled: true
+
+  contacts: []
+  # - name: 张三
+  #   enabled: true
+
+ai:
+  enabled: false
+  provider: deepseek
+  model: deepseek-chat
+  base_url: https://api.deepseek.com
+  temperature: 0.3
+  api_key_env: DEEPSEEK_API_KEY
+
+privacy:
+  # 发送给 AI 前是否脱敏（建议开启，保护隐私）
+  redact_before_ai: true
+  redact_phone: true
+  redact_email: true
+  redact_id_card: true
+  redact_bank_card: true
+
+filters:
+  skip_system_message: true
+  skip_sticker: false
+  max_message_length: 0
+
+schedule:
+  enabled: false
+  time: "09:00"
